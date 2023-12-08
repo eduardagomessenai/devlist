@@ -3,10 +3,16 @@ import { AppContext } from "../../AppContent";
 import checkedIcon from "../../assets/icon-checked.svg";
 import styles from "./TaskItem.module.css";
 
-const TaskItem = ({task}) => {
+const TaskItem = ({ task }) => {
   const { handleTaskEdit, handleTaskDelete } = useContext(AppContext);
   return (
-    <li className={styles.container}>
+    <li
+      className={styles.container}
+      style={{
+        background: `${task.done ? "rgba(47,90,255,0.25)" : "#151a37"}`,
+        border: `1px solid ${task.done ? "#2F5AFF" : "24293F"}`,
+      }}
+    >
       <label>
         <input
           className={styles.inputCheckbox}

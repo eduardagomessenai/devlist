@@ -11,7 +11,7 @@ const CompletedTasks = () => {
     <div className={styles.container}>
       <Title iconName="completed" text="Tarefas concluídas" />
 
-      <ul className={styles.tasklist}>
+      <ul className={styles.taskList}>
         {taskList.map(
           (task) => task.done && <TaskItem key={task.id} task={task} />
         )}

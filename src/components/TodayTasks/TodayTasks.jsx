@@ -8,7 +8,12 @@ const TodayTasks = () => {
   const { taskList, progressiveBarValue } = useContext(AppContext);
   console.log(taskList);
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{
+        marginTop: `${progressiveBarValue === 100 ? "-107px" : "0"}`,
+      }}
+    >
       <Title iconName={"list"} text={"Tarefas de hoje"} />
       {progressiveBarValue === 100 || taskList.length === 0 ? (
         <span className={styles.todayTasksMessage}>
